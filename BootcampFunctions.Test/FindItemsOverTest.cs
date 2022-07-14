@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 namespace BootcampFunctions.Test
 {
   public class FindItemsOverTest
@@ -29,7 +30,7 @@ namespace BootcampFunctions.Test
        },
          };
 
-      Assert.Equal(newList.ToString(), FindItemsOver.ItemsOverThreshold(itemsList, 30).ToString());
+      Assert.Equal(JsonConvert.SerializeObject(newList), JsonConvert.SerializeObject(FindItemsOver.ItemsOverThreshold(itemsList, 30)));
     }
     [Fact]
     public void ShouldBeAbleToReturnAnEmptyList()
@@ -55,7 +56,7 @@ namespace BootcampFunctions.Test
       {
       };
 
-      Assert.Equal(newList, FindItemsOver.ItemsOverThreshold(itemsList, 40));
+      Assert.Equal(JsonConvert.SerializeObject(newList), JsonConvert.SerializeObject(FindItemsOver.ItemsOverThreshold(itemsList, 40)));
     }
   }
 }

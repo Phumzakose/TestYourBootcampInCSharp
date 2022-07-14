@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 namespace BootcampFunctions.Test
 {
   public class FindItemsOver20Test
@@ -33,7 +34,7 @@ namespace BootcampFunctions.Test
        }
          };
 
-      Assert.Equal(expectedList.ToString(), FindItemsOver20.ItemsOver20(li).ToString());
+      Assert.Equal(JsonConvert.SerializeObject(expectedList), JsonConvert.SerializeObject(FindItemsOver20.ItemsOver20(li)));
     }
     [Fact]
     public void ShouldBeAbleToReturnAllItemsOver20()
@@ -57,7 +58,7 @@ namespace BootcampFunctions.Test
        },
          };
 
-      Assert.Equal(results.ToString(), FindItemsOver20.ItemsOver20(secondList).ToString());
+      Assert.Equal(JsonConvert.SerializeObject(results), JsonConvert.SerializeObject(FindItemsOver20.ItemsOver20(secondList)));
     }
   }
 }
