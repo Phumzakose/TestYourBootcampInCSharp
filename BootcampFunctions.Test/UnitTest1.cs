@@ -7,9 +7,9 @@ public class GreetTest
   {
     Assert.Equal("Hello, Phumza", Greet.Greetings("Phumza"));
   }
-  // [Fact]
-  // public void ShouldBeAbleToReturnError()
-  // {
-  //     Assert.Equal("Error", Greet.Greetings(2));
-  // }
+  [Fact]
+  public void ShouldBeAbleToReturnErrorMessage()
+  {
+    Assert.Equal("Please enter your name", Greet.Greetings(""));
+  }
 }
