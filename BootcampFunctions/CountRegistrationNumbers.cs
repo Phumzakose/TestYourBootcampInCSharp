@@ -1,13 +1,21 @@
 namespace BootcampFunctions
 {
-public class CountRegistrationNumber
-{
-  public static int RegNumbers(string regNumbers)
+  public class CountRegistrationNumber
   {
-    string[] str = regNumbers.Split(",");
-      return str.Length;
+    public static int RegNumbers(string regNumbers)
+    {
+      if (regNumbers == "")
+      {
+        return 0;
+      }
+      else
+      {
+        string[] str = regNumbers.Split(",");
+        return str.Length;
+
+      }
+    }
   }
-} 
 
 }
 

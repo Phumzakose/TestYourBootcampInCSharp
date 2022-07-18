@@ -60,5 +60,26 @@ namespace BootcampFunctions.Test
 
       Assert.Equal(JsonConvert.SerializeObject(results), JsonConvert.SerializeObject(FindItemsOver20.ItemsOver20(secondList)));
     }
+    [Fact]
+    public void ShouldBeAbleToReturnAnEmptyListIfThereAreNoItemsOver20()
+    {
+      List<Item> thirdList = new List<Item>()
+       {
+       {
+          new Item() {Name = "apples",Qty = 5}
+        },
+       {
+        new Item() {Name = "pears",Qty = 7}
+       },
+       {
+        new Item() {Name = "grapes",Qty = 3}
+       }
+       };
+      List<Item> result = new List<Item>()
+      {
+
+      };
+      Assert.Equal(JsonConvert.SerializeObject(result), JsonConvert.SerializeObject(FindItemsOver20.ItemsOver20(thirdList)));
+    }
   }
 }
